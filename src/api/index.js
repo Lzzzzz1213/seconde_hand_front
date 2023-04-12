@@ -2,7 +2,6 @@ import request from '../utils/request';
 
 const api = {
     userLogin(query) {
-        console.log(query)
         return request({
             url: '/user/login',
             method: 'get',
@@ -303,6 +302,26 @@ const api = {
             method: 'get',
             params: query
         });
+    },
+    addCarouselMap(data) {
+        return request({
+            url: '/carouselMap/add',
+            method: 'post',
+            data: data
+        })
+    },
+    findAllCarouselMap() {
+        return request({
+            url: '/carouselMap/pics',
+            method: 'get'
+        })
+    },
+    deleteCarouselMap(query) {
+        return request({
+            url: '/carouselMap/delete',
+            method: 'get',
+            params: query
+        })
     }
 };
 

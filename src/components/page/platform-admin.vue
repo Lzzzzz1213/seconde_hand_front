@@ -4,7 +4,7 @@
             <el-header>
                 <div class="header">
                     <div class="app-name">
-                        <router-link to="/platform-admin" >后台管理</router-link>
+                        <router-link to="/platform-admin" >二手交易系统后台管理</router-link>
                     </div>
                     <span class="app-title">管理员：{{admin.nickname}}</span>
                     <div  class="app-logOut">
@@ -17,12 +17,12 @@
                     <el-aside>
                         <el-col :span="24" >
                             <el-menu
-                                    default-active="1"
-                                    class="el-menu-vertical-demo"
-                                    @select="handleSelect"
+                                    active-text-color="#409EFF"
                                     background-color="#ffffff"
+                                    class="el-menu-vertical-demo"
+                                    default-active="1"
                                     text-color="#303133"
-                                    active-text-color="#409EFF">
+                                    @select="handleSelect">
                                 <el-menu-item index="1">
                                     <i class="el-icon-goods"></i>
                                     <span>闲置管理</span>
@@ -35,6 +35,10 @@
                                     <i class="el-icon-s-custom"></i>
                                     <span slot="title">用户管理</span>
                                 </el-menu-item>
+                                <el-menu-item index="4" >
+                                    <i class="el-icon-s-data"></i>
+                                    <span slot="title">轮播图管理</span>
+                                </el-menu-item>
                             </el-menu>
                         </el-col>
                     </el-aside>
@@ -42,6 +46,7 @@
                         <IdleGoods v-if="mode == 1"></IdleGoods>
                         <orderList v-if="mode == 2"></orderList>
                         <userList v-if="mode == 3"></userList>
+                        <carousel-map-list v-if="mode == 4"></carousel-map-list>
                     </el-main>
                 </div>
             </el-container>
@@ -57,6 +62,7 @@
     import IdleGoods from '../common/IdleGoods.vue'
     import orderList from '../common/orderList.vue'
     import userList from '../common/userList.vue'
+    import carouselMapList from '../common/carouselMapList.vue';
     export default {
         name: "platform-admin",
         components: {
@@ -64,6 +70,7 @@
             IdleGoods,
             orderList,
             userList,
+            carouselMapList
         },
         data(){
             return {

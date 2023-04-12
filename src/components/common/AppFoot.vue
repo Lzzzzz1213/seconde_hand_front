@@ -1,8 +1,6 @@
 <template>
     <div class="foot-container">
-        <div class="author">基于SpringBoot的二手交易系统，作者：毛奕铭</div>
-        <br>
-        <div class="finishtime">完成时间2023-3-15</div>
+        <div class="author">基于SpringBoot的二手交易系统，作者：毛奕铭------完成时间2023-3-15</div>
     </div>
 </template>
 
